@@ -32,11 +32,165 @@
 
     </header>
 
-    <!-- Main -->
+
     <main>
+        <!-- Haut de Page -->
+        <div class="imageHautDePage">
+            <img src="Images/Haut de page.jpeg" alt="Chiens qui courent">
+            <div class="effetSombre flex">
+                <h1>Protégeons-les Ensemble</h1>
+                <p>Chaque don compte pour leur offrir une vie meilleure</p>
+            </div>
+        </div>
+        <br><br>
+
+        <!-- Faire un don -->
+        <h2>Faites un don</h2>
+
+        <section id="s1">
+            <div class="section-don">
+                <div class="options-don flex">
+                    <div id="don10" class="option-don" onclick="selectionDon('don10')">
+                        <h3>10€</h3>
+                        <p>Permet de nourrir 5 animaux pendant une journée</p>
+                    </div>
+                    <div id="don20" class="option-don selectionnee" onclick="selectionDon('don20')">
+                        <h3>20€</h3>
+                        <p>Permet d'héberger un animal sauvage pendant une nuit</p>
+                    </div>
+                    <div id="don50" class="option-don" onclick="selectionDon('don50')">
+                        <h3>50€</h3>
+                        <p>Permet de financer les soins vétérinaires complets pour un animal</p>
+                    </div>
+                </div><br>
+                <div class="options-frequence flex">
+                    <div id="frequenceUnique" class="option-frequence" onclick="selectionFrequence('frequenceUnique')">Une fois</div>
+                    <div id="frequenceMensuelle" class="option-frequence selectionnee" onclick="selectionFrequence('frequenceMensuelle')">Mensuel</div>
+                    <div id="frequenceAnnuelle" class="option-frequence" onclick="selectionFrequence('frequenceAnnuelle')">Annuel</div>
+                </div><br>
+                <a href="#" id="boutonDon" class="bouton-don flex"><img src="Images/Icone/coeur.png" alt="coeur"><p>Faire un don de 20€/mois</p></a>
+            </div>
+
+        </section>
+
+        <br><br>
+        <!-- Section 2 - Notre mission-->
+        <section id="s2">
+            <div class="section-mission flex">
+                <img src="Images/Notre mission.jpeg" alt="chien en mission">
+                <div class="contenu-mission">
+                <h3>Notre Mission</h3><br>
+                <p>Depuis 2010, Quatre Pattes oeuvre sans relâche pour la protection et le bien-être des animaux en France. Notre mission est double : secourir les animaux en détresse et sensibiliser le public à la cause animale.</p><br>
+                <p>Chaque année, nus prenons en charge plus de 1000 animaux abandonnés, maltraités ou blessés. Grâce à notre réseau de familles d’accueil et nos partenariats avec des refuges, nous leur offrons une seconde chance.</p><br>
+                <p>Votre soutien est essentiel pour continuer notre mission. Ensemble, nous pouvons faire la différence pour ces êtres qui comptent sur nous</p>
+                </div>
+            </div>   
+        </section>
+
+        <!-- Section 3 -->
+
+        <h2>Histoire de réussite</h2>
+        <section>
+        <div class="section-galerie">
+            <div class="grande-image" id="grandeImage">
+                <img src="Images/Luna.jpeg" alt="Luna">
+                <div class="texte-image" id="texteImage">
+                    <span>Luna</span><br><br>
+                    Trouvée dans la rue avec une patte cassée, Luna a été soignée et a retrouvé sa joie de vivre. Elle coule maintenant des jours heureux dans sa nouvelle famille.<br><br>
+                    <small>Janvier 2024</small>
+                </div>
+            </div>
+            <div class="miniatures grid">
+                <div class="miniature active" id="luna" onclick="changerImage('Images/Luna.jpeg', 'Luna', 'Trouvée dans la rue avec une patte cassée, Luna a été soignée et a retrouvé sa joie de vivre. Elle coule maintenant des jours heureux dans sa nouvelle famille.', 'Janvier 2024')">
+                    <img src="Images/Luna.jpeg" alt="Luna">
+                    <div class="texte-miniature">Luna</div>
+                </div>
+                <div class="miniature" id="oscar" onclick="changerImage('Images/Oscar.jpeg', 'Oscar', 'Trouvée dans la rue avec une patte cassée, Oscar a été soignée et a retrouvé sa joie de vivre. Elle coule maintenant des jours heureux dans sa nouvelle famille.', 'Janvier 2024')">
+                    <img src="Images/Oscar.jpeg" alt="Oscar">
+                    <div class="texte-miniature">Oscar</div>
+                </div>
+                <div class="miniature" id="max" onclick="changerImage('Images/Max.jpeg', 'Max', 'Sauvé d\'un laboratoire, Max n\'avait jamais connu l\'amour. Aujourd\'hui, il profite de sa liberté et fait le bonheur de sa famille d\'accueil.', 'Février 2024')">
+                    <img src="Images/Max.jpeg" alt="Max">
+                    <div class="texte-miniature">Max</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
+    <!-- Section 4 quizz -->
+     
+    <section id="s4">
 
+        <h2>Testez Vos Connaissances</h2>
+        <div class="section-quizz">
+            
+    
+            <div class="question" id="question1">
+                <h3>Les associations gardent la majorité des dons pour leur fonctionnement</h3>
+                <div class="reponses flex">
+                    <div class="reponse" onclick="afficherReponse(this, true, 'Vrai, les associations utilisent plus de 50% des dons pour leurs frais de fonctionnement.')">
+                        Vrai
+                    </div>
+                    <div class="reponse" onclick="afficherReponse(this, false, 'Faux ! Chez Quatre Pattes, 85% des dons sont directement utilisés pour les animaux. Seuls 15% servent aux frais de fonctionnement essentiels.')">
+                        Faux
+                    </div>
+                </div>
+            </div>
+    
+            <div class="question" id="question2">
+                <h3>Les refuges ne prennent que les animaux en bonne santé</h3>
+                <div class="reponses flex">
+                    <div class="reponse" onclick="afficherReponse(this, true, 'Vrai, ils refusent les animaux malades car c\'est trop coûteux.')">
+                        Vrai
+                    </div>
+                    <div class="reponse" onclick="afficherReponse(this, false, 'Faux ! Nous accueillons tous les animaux, quel que soit leur état de santé. Chaque vie compte !')">
+                        Faux
+                    </div>
+                </div>
+            </div>
+    
+            <div class="question" id="question3">
+                <h3>Les associations ont trop de moyens grâce aux dons</h3>
+                <div class="reponses flex">
+                    <div class="reponse" onclick="afficherReponse(this, true, 'Vrai, elles reçoivent beaucoup d\'argent des donateurs.')">
+                        Vrai
+                    </div>
+                    <div class="reponse" onclick="afficherReponse(this, false, 'Faux ! Les besoins sont immenses et constants. Chaque don est précieux pour sauver plus d\'animaux.')">
+                        Faux
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notre Impact -->
+         <h2>Notre Impact</h2>
+
+         <div class="section-impact flex">
+            <div class="refuge flex">
+                <img src="Images/Icone/Refuge.png" alt="icone refuge">
+                <p><b>50+ Refuges</b></p>
+                <p>Partenaires à travers la france</p>
+            </div>
+
+            <div class="animaux flex">
+                <img src="Images/Icone/Animaux.png" alt="icone animaux">
+                <p><b>1000+ Animaux</b></p>
+                <p>Sauvé chaque année</p>
+            </div>
+
+            <div class="repas flex">
+                <img src="Images/Icone/Repas.png" alt="icone repas">
+                <p><b>10 000+ Repas</b></p>
+                <p>Distribués par mois</p>
+            </div>
+
+         </div>
+    </section>
+
+    <h2>Témoignages</h2>
+   
+   
     </main>
 
 
