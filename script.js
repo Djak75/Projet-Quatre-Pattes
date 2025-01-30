@@ -115,7 +115,7 @@ function validationForm() {
     document.getElementById("confirmation").innerText = "Votre message a bien été envoyé !"
   }
 
-  return isValid;
+  return isValid
 }
 
 
