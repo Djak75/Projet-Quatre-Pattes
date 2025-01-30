@@ -1,3 +1,4 @@
+// Barre de nav
 function toggleMenu() {
     const navMenu = document.getElementById('navMenu');
     navMenu.classList.toggle('active')
@@ -7,8 +8,7 @@ function toggleMenu() {
     document.getElementById('navMenu').classList.remove('active')
   }
 
-// Section 2 don
-
+// Section 2 - don
 function selectionDon(don) {
   let optionsDon = document.getElementsByClassName("option-don")
   for (let i = 0; i < optionsDon.length; i++) {
@@ -29,11 +29,17 @@ function selectionFrequence(frequence) {
 
 function mettreAJourBouton() {
   let donSelectionne = document.getElementsByClassName("option-don selectionnee")[0].getElementsByTagName("h3")[0].innerText
-  let frequenceSelectionnee = document.getElementsByClassName("option-frequence selectionnee")[0].innerText.toLowerCase()
+  let frequenceSelectionnee = document.getElementsByClassName("option-frequence selectionnee")[0].innerText.toLowerCase();
+
+if (frequenceSelectionnee === "mensuel") {
+    frequenceSelectionnee = "mois";
+} else if (frequenceSelectionnee === "annuel") {
+    frequenceSelectionnee = "an";
+}
   document.getElementById("boutonDon").innerHTML = "<img src='Images/Icone/coeur.png' alt='Icône'> Faire un don de " + donSelectionne + "/" + frequenceSelectionnee
 }
 
-// Section 3 histoire de réussite
+// Section 3 - histoire de réussite
 
 function changerImage(source, titre, description, date) {
   document.getElementById('grandeImage').getElementsByTagName('img')[0].setAttribute('src', source);

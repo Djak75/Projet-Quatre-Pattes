@@ -12,21 +12,25 @@
     <header>
 
         <nav class="navBar flex">
-            <div class="logo"><img src="Images/Logo.png" alt="Logo"></div>
+            <div class="logo">
+                <a class="flex" href="accueil.html"><img src="Images/Icone/paw-print.svg" alt="patte"><p>Quatre Pattes</p></a>
+            </div>
             <div class="navLiens flex">
                 <a href="accueil.html">Accueil</a>
                 <a href="contact.html">Contact</a>
-                <button class="bouttonDon flex"><img src="Images/Icone/coeur.png" alt="coeur"><p>Faire un don</p></button>
+                <a href="accueil.html"><button class="bouttonDon flex"><img src="Images/Icone/coeur.png" alt="coeur"><p>Faire un don</p></button></a>
             </div>
             <div class="burger" onclick="toggleMenu()"><img src="Images/Icone/Menu burger.png" alt="logo burger"></div>
         </nav>
 
         <!-- Menu déroulant -->
             <div class="nav-menu" id="navMenu">
-                <div class="logo"><img src="Images/Logo.png" alt="Logo"></div>
+                <div class="logo">
+                    <a class="flex" href="accueil.html"><img src="Images/Icone/paw-print.svg" alt="patte"><p>Quatre Pattes</p></a>
+                </div>
                 <span class="close-btn" onclick="closeMenu()"><img src="Images/Icone/Croix.png" alt="logo fermeture"></span>
-                <a href="#">Accueil</a>
-                <a href="#">Contact</a>
+                <a href="accueil.html">Accueil</a>
+                <a href="contact.html">Contact</a>
                 <button class="bouttonDon flex"><img src="Images/Icone/coeur.png" alt="coeur"><p>Faire un don</p></button>
             </div>
     </header>
