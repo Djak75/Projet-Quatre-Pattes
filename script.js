@@ -48,16 +48,20 @@ function changerImage(source, titre, description, date) {
 }
 
 // Section 4 - Quizz
-function afficherReponse(element, estCorrect, message) {
-  let reponses = element.parentElement.getElementsByClassName('reponse')
-  for (let i = 0; i < reponses.length; i++) {
-      reponses[i].classList.remove('correct', 'incorrect')
-      reponses[i].innerHTML = reponses[i].innerText
-  }
 
-  // Ajouter l'icône et le message 
-  element.classList.add(estCorrect ? 'correct' : 'incorrect')
-  element.innerHTML = '<img src="' + (estCorrect ? 'Images/Icone/Ok.png' : 'Images/Icone/Croix rouge.png') + '" alt="' + (estCorrect ? 'Vrai' : 'Faux') + '"> ' + message
+function afficherReponse(questions, estCorrect, message) {
+  const question = document.getElementById(questions)
+
+  const questionTitre = question.querySelector('h3').textContent
+
+  const contenu = 
+    '<h3>' + questionTitre + '</h3>' +
+    '<div class="' + (estCorrect ? 'correct' : 'incorrect') + '">' +
+    '<img src="Images/Icone/' + (estCorrect ? 'ok.png' : 'croix rouge.png') + '" alt="' + (estCorrect ? 'Vrai' : 'Faux') + '" class="icone">' +
+    message + '</div>'
+    
+  // Remplacer le contenu 
+  question.innerHTML = contenu;
 }
 
 // PAGE CONTACT
