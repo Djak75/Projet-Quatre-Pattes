@@ -1,163 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Header</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        .bouttonDon {
-    width: 175px;
-    height: 42px;
-    background: #DB2727;
-    border-radius: 8px;
-    border: none;
-    color: white;
-    font-size: 18px;
-    font-weight: 400;
-    cursor: pointer;
-    display: flex;
-    font-family: roboto;
-    justify-content: space-evenly;
-    align-items: center;
-    }
-
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background-color: #2a785b;
-            color: white;
-            padding: 10px 20px;
-            position: relative;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo img {
-            width: 30px;
-            margin-right: 10px;
-        }
-
-        nav {
-            display: flex;
-            gap: 15px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-        }
-
-        .menu-icon, .close-icon {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        .menu-icon img, .close-icon img {
-            width: 30px;
-        }
-
-        .menu {
-            display: none;
-            flex-direction: column;
-            gap: 10px;
-            position: absolute;
-            top: 50px;
-            left: 0;
-            background-color: #2a785b;
-            padding: 10px;
-            width: 100%;
-        }
-
-        .menu.open {
-            display: flex;
-        }
-
-        .menu a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                display: none;
-            }
-
-            .menu-icon, .close-icon {
-                display: block;
-                position: absolute;
-                right: 20px;
-                top: 15px;
-            }
-
-            .close-icon {
-                display: none;
-            }
-
-            .menu.open + .close-icon {
-                display: block;
-            }
-
-            .menu.open ~ .menu-icon {
-                display: none;
-            }
-        }
-    </style>
+    <title>Contact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Barre de navigation -->
     <header>
-        <div class="logo">
-            <img src="logo.png" alt="Quatre Pattes">
-            <span>Quatre Pattes</span>
-        </div>
-        <nav>
-            <a href="#">Accueil</a>
-            <a href="#">Contact</a>
-            <button class="bouttonDon"><img src="Images/Icone/coeur.png" alt="coeur"><p>Faire un don</p></button>
+
+        <nav class="navBar flex">
+            <div class="logo"><img src="Images/Logo.png" alt="Logo"></div>
+            <div class="navLiens flex">
+                <a href="accueil.html">Accueil</a>
+                <a href="contact.html">Contact</a>
+                <button class="bouttonDon flex"><img src="Images/Icone/coeur.png" alt="coeur"><p>Faire un don</p></button>
+            </div>
+            <div class="burger" onclick="toggleMenu()"><img src="Images/Icone/Menu burger.png" alt="logo burger"></div>
         </nav>
-        <div class="menu-icon" id="menu-icon" onclick="toggleMenu()">
-            <img src="Images/Icone/Menu burger.png" alt="Menu">
-        </div>
-        <div class="close-icon" id="close-icon" onclick="toggleMenu()">
-            <img src="Images/Icone/Croix.png" alt="Close">
-        </div>
-        <div class="menu" id="menu">
-            <a href="#">Accueil</a>
-            <a href="#">Contact</a>
-            <button class="bouttonDon"><img src="Images/Icone/coeur.png" alt="coeur"><p>Faire un don</p></button>
-        </div>
+
+        <!-- Menu déroulant -->
+            <div class="nav-menu" id="navMenu">
+                <div class="logo"><img src="Images/Logo.png" alt="Logo"></div>
+                <span class="close-btn" onclick="closeMenu()"><img src="Images/Icone/Croix.png" alt="logo fermeture"></span>
+                <a href="#">Accueil</a>
+                <a href="#">Contact</a>
+                <button class="bouttonDon flex"><img src="Images/Icone/coeur.png" alt="coeur"><p>Faire un don</p></button>
+            </div>
     </header>
-    <main>
-        <!-- Content goes here -->
-    </main>
 
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            const menuIcon = document.getElementById('menu-icon');
-            const closeIcon = document.getElementById('close-icon');
+    <!-- Main -->
+     <main>
+        <h2>Contactez-nous</h2>
+    
+        <div class="formulaire">
+        <form class="monForm" onsubmit="return validationForm()">
+            <label for="name">Nom</label>
+            <input type="text" id="name">
+            <div id="error-name" class="error"></div>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email">
+            <div id="error-email" class="error"></div>
+            
+            <label for="sujet">Sujet</label>
+            <select id="sujet">
+                <option value="">Choisissez un sujet</option>
+                <option value="don">Faire un don</option>
+                <option value="question-don">Question sur les dons</option>
+                <option value="benevole">Devenir bénévole</option>
+                <option value="questions">Question générales</option>
+            </select><br>
 
-            if (menu.classList.contains('open')) {
-                menu.classList.remove('open');
-                menuIcon.style.display = 'block';
-                closeIcon.style.display = 'none';
-            } else {
-                menu.classList.add('open');
-                menuIcon.style.display = 'none';
-                closeIcon.style.display = 'block';
-            }
-        }
-    </script>
-</body>
-</html>
+            <label for="message">Message</label>
+            <textarea id="message" rows="7"></textarea>
+            <div id="error-message" class="error"></div>
+
+            <button class="bouton-envoyer flex" type="submit">
+                <img src="Images/Icone/Envoyer.png" alt="logo envoyer">
+                <p>Envoyer</p>
+            </button>
+            <div id="confirmation" class="ok"></div>
+
+        </form>
+    </div>
+
+     </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-section">
+            <h4>Quatre Pattes</h4>
+            <p>Ensemble, protégeons les animaux et donnons-leur une vie meilleure.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Contact</h4>
+            <div class="flex contact">
+                <img src="Images/Icone/Enveloppe.png" alt="Email" class="icone enveloppe">
+                <p>contact@quatrepattes.org</p>
+            </div>
+        </div>
+        <div class="footer-section suivez-nous">
+            <h4>Suivez-nous</h4>
+        
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    </body>
