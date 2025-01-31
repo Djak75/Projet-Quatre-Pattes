@@ -11,7 +11,7 @@
     <!-- Barre de navigation -->
     <header>
 
-        <nav class="navBar flex">
+        <nav class="navBar flex alignement">
             <div class="logo">
                 <a class="flex" href="accueil.html"><img src="Images/Icone/paw-print.svg" alt="patte"><p>Quatre Pattes</p></a>
             </div>
@@ -31,12 +31,13 @@
                 <span class="close-btn" onclick="closeMenu()"><img src="Images/Icone/Croix.png" alt="logo fermeture"></span>
                 <a href="accueil.html">Accueil</a>
                 <a href="contact.html">Contact</a>
-                <button class="bouttonDon flex"><img src="Images/Icone/coeur.png" alt="coeur"><p>Faire un don</p></button>
+                <a href="accueil.html"><button class="bouttonDon flex"><img src="Images/Icone/coeur.png" alt="coeur"><p>Faire un don</p></button></a>
             </div>
+
     </header>
 
     <!-- Main -->
-     <main>
+     <main class="main-contact">
         <h2>Contactez-nous</h2>
     
         <div class="formulaire">
@@ -73,8 +74,9 @@
 
      </main>
 
-    <!-- Footer -->
-    <footer class="footer">
+     <!-- Footer -->
+     <footer>
+        <div class="footer alignement">
         <div class="footer-section">
             <h4>Quatre Pattes</h4>
             <p>Ensemble, protégeons les animaux et donnons-leur une vie meilleure.</p>
@@ -88,8 +90,8 @@
         </div>
         <div class="footer-section suivez-nous">
             <h4>Suivez-nous</h4>
-
         </div>
+    </div>
     </footer>
 
     <script src="script.js"></script>

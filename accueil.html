@@ -11,7 +11,7 @@
     <!-- Barre de navigation -->
     <header>
 
-        <nav class="navBar flex">
+        <nav class="navBar flex alignement">
             <div class="logo">
                 <a class="flex" href="accueil.html"><img src="Images/Icone/paw-print.svg" alt="patte"><p>Quatre Pattes</p></a>
             </div>
@@ -31,7 +31,7 @@
                 <span class="close-btn" onclick="closeMenu()"><img src="Images/Icone/Croix.png" alt="logo fermeture"></span>
                 <a href="accueil.html">Accueil</a>
                 <a href="contact.html">Contact</a>
-                <button class="bouttonDon flex"><img src="Images/Icone/coeur.png" alt="coeur"><p>Faire un don</p></button>
+                <a href="#ancre-don"><button class="bouttonDon flex"><img src="Images/Icone/coeur.png" alt="coeur"><p>Faire un don</p></button></a>
             </div>
 
     </header>
@@ -51,7 +51,7 @@
         <h2 id="ancre-don">Faites un don</h2>
 
         <section id="s1">
-            <div class="section-don">
+            <div class="section-don alignement">
                 <div class="options-don flex">
                     <div id="don10" class="option-don" onclick="selectionDon('don10')">
                         <h3>10€</h3>
@@ -79,7 +79,7 @@
         <br><br>
         <!-- Section 2 - Notre mission-->
         <section id="s2">
-            <div class="section-mission flex">
+            <div class="section-mission alignement flex">
                 <img src="Images/Notre mission.jpeg" alt="chien en mission">
                 <div class="contenu-mission">
                 <h3>Notre Mission</h3><br>
@@ -94,7 +94,7 @@
 
         <h2>Histoire de réussite</h2>
         <section>
-        <div class="section-galerie">
+        <div class="section-galerie alignement">
             <div class="grande-image" id="grandeImage">
                 <img src="Images/Luna.jpeg" alt="Luna">
                 <div class="texte-image" id="texteImage">
@@ -126,9 +126,8 @@
     <section id="s4">
 
         <h2>Testez Vos Connaissances</h2>
-        <div class="section-quizz">
+        <div class="section-quizz alignement">
             
-    
             <div class="question" id="question1">
                 <h3>Les associations gardent la majorité des dons pour leur fonctionnement</h3>
                 <div class="reponses flex">
@@ -169,23 +168,23 @@
         <!-- Notre Impact -->
          <h2>Notre Impact</h2>
 
-         <div class="section-impact flex">
+         <div class="section-impact flex alignement">
             <div class="refuge flex">
                 <img src="Images/Icone/Refuge.png" alt="icone refuge">
                 <p><b>50+ Refuges</b></p>
-                <p><strong>Partenaires à travers la france</strong></p>
+                <p><span>Partenaires à travers la france</span></p>
             </div>
 
             <div class="animaux flex">
                 <img src="Images/Icone/Animaux.png" alt="icone animaux">
                 <p><b>1000+ Animaux</b></p>
-                <p><strong> Sauvés chaque année</strong></p>
+                <p><span> Sauvés chaque année</span></p>
             </div>
 
             <div class="repas flex">
                 <img src="Images/Icone/Repas.png" alt="icone repas">
                 <p><b>10 000+ Repas</b></p>
-                <p><strong>Distribués par mois</strong></p>
+                <p><span>Distribués par mois</span></p>
             </div>
 
          </div>
@@ -196,7 +195,7 @@
 
     <section id="s5">
         
-        <div class="temoignages">
+        <div class="temoignages alignement flex">
             <div class="boite-temoignage">
                 <img src="Images/Témoignage refuge Lyon.jpeg" alt="Chat et chien">
                 <div class="texte-temoignage">
@@ -222,8 +221,11 @@
     </section>
 
     </main>
+
+
     <!-- Footer -->
-    <footer class="footer">
+    <footer>
+        <div class="footer alignement">
         <div class="footer-section">
             <h4>Quatre Pattes</h4>
             <p>Ensemble, protégeons les animaux et donnons-leur une vie meilleure.</p>
@@ -237,8 +239,8 @@
         </div>
         <div class="footer-section suivez-nous">
             <h4>Suivez-nous</h4>
-            
         </div>
+    </div>
     </footer>
 
     <script src="script.js"></script>
