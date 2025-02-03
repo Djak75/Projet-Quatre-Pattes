@@ -28,7 +28,7 @@ function selectionFrequence(frequence) {
 }
 
 function mettreAJourBouton() {
-  let donSelectionne = document.getElementsByClassName("option-don selectionnee")[0].getElementsByTagName("h3")[0].innerText
+  let donSelectionne = document.getElementsByClassName("option-don selectionnee")[0].getElementsByTagName("h3")[0].innerHTML
   let frequenceSelectionnee = document.getElementsByClassName("option-frequence selectionnee")[0].innerText.toLowerCase()
 
   if (frequenceSelectionnee === "mensuel") {
@@ -41,10 +41,10 @@ function mettreAJourBouton() {
 }
 
 // Ajout du prompt 
-document.getElementById("boutonDon").addEventListener("click", function(event) {
+document.getElementById("boutonDon").addEventListener("click", function(test) {
   
-    let donSelectionne = document.getElementsByClassName("option-don selectionnee")[0].getElementsByTagName("h3")[0].innerText
-    let frequenceSelectionnee = document.getElementsByClassName("option-frequence selectionnee")[0].innerText.toLowerCase()
+    let donSelectionne = document.getElementsByClassName("option-don selectionnee")[0].getElementsByTagName("h3")[0].innerHTML
+    let frequenceSelectionnee = document.getElementsByClassName("option-frequence selectionnee")[0].innerHTML.toLowerCase()
 
     if (frequenceSelectionnee === "mensuel") {
         frequenceSelectionnee = "mois"
@@ -52,7 +52,7 @@ document.getElementById("boutonDon").addEventListener("click", function(event) {
         frequenceSelectionnee = "an"
     }
 
-    // Afficher le prompt
+  // Afficher le prompt
     alert("Vous avez choisi de faire un don de " + donSelectionne + " / " + frequenceSelectionnee)
 })
 
@@ -87,7 +87,7 @@ function afficherReponse(questions, estCorrect, message) {
     const contenu = 
         '<h3>' + questionTitre + '</h3>' +
         '<div class="' + (estCorrect ? 'correct' : 'incorrect') + '">' +
-        '<img src="Images/Icone/' + (estCorrect ? 'check.svg' : 'x-red.svg') + '" alt="' + (estCorrect ? 'Vrai' : 'Faux') + '" class="icone">' +
+        '<img src="Images/Icone/' + (estCorrect ? 'ok.png' : 'Croix rouge.png') + '" alt="' + (estCorrect ? 'Vrai' : 'Faux') + '" class="icone">' +
         message + 
         '</div>'
 
