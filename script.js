@@ -29,20 +29,37 @@ function selectionFrequence(frequence) {
 
 function mettreAJourBouton() {
   let donSelectionne = document.getElementsByClassName("option-don selectionnee")[0].getElementsByTagName("h3")[0].innerText
-  let frequenceSelectionnee = document.getElementsByClassName("option-frequence selectionnee")[0].innerText.toLowerCase();
+  let frequenceSelectionnee = document.getElementsByClassName("option-frequence selectionnee")[0].innerText.toLowerCase()
 
-if (frequenceSelectionnee === "mensuel") {
-    frequenceSelectionnee = "mois";
-} else if (frequenceSelectionnee === "annuel") {
-    frequenceSelectionnee = "an";
-}
+  if (frequenceSelectionnee === "mensuel") {
+      frequenceSelectionnee = "mois"
+  } else if (frequenceSelectionnee === "annuel") {
+      frequenceSelectionnee = "an"
+  }
+
   document.getElementById("boutonDon").innerHTML = "<img src='Images/Icone/heart.svg' alt='Icône'> Faire un don de " + donSelectionne + "/" + frequenceSelectionnee
 }
+
+// Ajout du prompt 
+document.getElementById("boutonDon").addEventListener("click", function(event) {
+  
+    let donSelectionne = document.getElementsByClassName("option-don selectionnee")[0].getElementsByTagName("h3")[0].innerText
+    let frequenceSelectionnee = document.getElementsByClassName("option-frequence selectionnee")[0].innerText.toLowerCase()
+
+    if (frequenceSelectionnee === "mensuel") {
+        frequenceSelectionnee = "mois"
+    } else if (frequenceSelectionnee === "annuel") {
+        frequenceSelectionnee = "an"
+    }
+
+    // Afficher le prompt
+    alert("Vous avez choisi de faire un don de " + donSelectionne + " / " + frequenceSelectionnee)
+})
 
 // Section 3 - histoire de réussite
 
 function changerImage(source, titre, description, date) {
-  document.getElementById('grandeImage').getElementsByTagName('img')[0].setAttribute('src', source);
+  document.getElementById('grandeImage').getElementsByTagName('img')[0].setAttribute('src', source)
 
   document.getElementById('texteImage').innerHTML = "<span>" + titre + "</span>" + "<p>" + description + "<p><small>" + date + "</small>"
 
@@ -55,19 +72,46 @@ function changerImage(source, titre, description, date) {
 
 // Section 4 - Quizz
 
+let score = 0
+let totalQuestions = document.querySelectorAll(".question").length
+
 function afficherReponse(questions, estCorrect, message) {
-  const question = document.getElementById(questions)
+    const question = document.getElementById(questions)
+    const questionTitre = question.querySelector('h3').textContent
 
-  const questionTitre = question.querySelector('h3').textContent
 
-  const contenu = 
-    '<h3>' + questionTitre + '</h3>' +
-    '<div class="' + (estCorrect ? 'correct' : 'incorrect') + '">' +
-    '<img src="Images/Icone/' + (estCorrect ? 'check.svg' : 'x-red.svg') + '" alt="' + (estCorrect ? 'Vrai' : 'Faux') + '" class="icone">' +
-    message + '</div>'
-    
-  // Remplacer le contenu 
-  question.innerHTML = contenu;
+    if (estCorrect) {
+        score++
+    }
+
+    const contenu = 
+        '<h3>' + questionTitre + '</h3>' +
+        '<div class="' + (estCorrect ? 'correct' : 'incorrect') + '">' +
+        '<img src="Images/Icone/' + (estCorrect ? 'check.svg' : 'x-red.svg') + '" alt="' + (estCorrect ? 'Vrai' : 'Faux') + '" class="icone">' +
+        message + 
+        '</div>'
+
+    // Remplacer le contenu 
+    question.innerHTML = contenu;
+
+    // Vérifier les questions
+    if (document.querySelectorAll('.question div.correct, .question div.incorrect').length === totalQuestions) {
+        afficherScoreFinal()
+    }
+}
+
+function afficherScoreFinal() {
+    const sectionQuizz = document.querySelector(".section-quizz")
+
+    // Créer un message 
+    const scoreFinal = document.createElement("div")
+    scoreFinal.className = "score-final"
+    scoreFinal.innerHTML = 
+        "<h3>Quiz terminé !</h3><br>" +
+        "<h4>Votre score : <strong>" + score + " / " + totalQuestions + "</strong></h4>"
+
+    // Ajouter le score final 
+    sectionQuizz.appendChild(scoreFinal)
 }
 
 // PAGE CONTACT
