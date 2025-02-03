@@ -6,6 +6,7 @@
     <title>Contact</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="Images/Icone/paw-print.png">
 </head>
 <body>
     <!-- Barre de navigation -->
@@ -18,9 +19,9 @@
             <div class="navLiens flex">
                 <a href="accueil.html">Accueil</a>
                 <a href="contact.html">Contact</a>
-                <a href="accueil.html"><button class="bouttonDon flex"><img src="Images/Icone/coeur.png" alt="coeur"><p>Faire un don</p></button></a>
+                <a href="accueil.html"><button class="bouttonDon flex"><img src="Images/Icone/heart.svg" alt="coeur"><p>Faire un don</p></button></a>
             </div>
-            <div class="burger" onclick="menuBurger()"><img src="Images/Icone/Menu burger.png" alt="logo burger"></div>
+            <div class="burger" onclick="menuBurger()"><img src="Images/Icone/menu.svg" alt="logo burger"></div>
         </nav>
 
         <!-- Menu déroulant -->
@@ -31,7 +32,7 @@
                 <span class="fermer-bouton flex" onclick="fermerMenu()"><img src="Images/Icone/x.svg" alt="logo fermeture" width="30px"></span>
                 <a href="accueil.html">Accueil</a>
                 <a href="contact.html">Contact</a>
-                <a href="accueil.html"><button class="bouttonDon flex"><img src="Images/Icone/coeur.png" alt="coeur"><p>Faire un don</p></button></a>
+                <a href="accueil.html"><button id="bouton-responsive" class="bouttonDon flex"><img src="Images/Icone/heart.svg" alt="coeur"><p>Faire un don</p></button></a>
             </div>
 
     </header>
@@ -56,6 +57,7 @@
                 <option value="don">Faire un don</option>
                 <option value="question-don">Question sur les dons</option>
                 <option value="benevole">Devenir bénévole</option>
+                <option value="partenariat">Partenariat</option>
                 <option value="questions">Question générales</option>
             </select><br>
 
@@ -64,7 +66,7 @@
             <div id="error-message" class="error"></div>
 
             <button class="bouton-envoyer flex" type="submit">
-                <img src="Images/Icone/Envoyer.png" alt="logo envoyer">
+                <img src="Images/Icone/send.svg" alt="logo envoyer">
                 <p>Envoyer</p>
             </button>
             <div id="confirmation" class="ok"></div>

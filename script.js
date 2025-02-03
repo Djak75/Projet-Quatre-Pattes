@@ -36,7 +36,7 @@ if (frequenceSelectionnee === "mensuel") {
 } else if (frequenceSelectionnee === "annuel") {
     frequenceSelectionnee = "an";
 }
-  document.getElementById("boutonDon").innerHTML = "<img src='Images/Icone/coeur.png' alt='Icône'> Faire un don de " + donSelectionne + "/" + frequenceSelectionnee
+  document.getElementById("boutonDon").innerHTML = "<img src='Images/Icone/heart.svg' alt='Icône'> Faire un don de " + donSelectionne + "/" + frequenceSelectionnee
 }
 
 // Section 3 - histoire de réussite
@@ -44,7 +44,7 @@ if (frequenceSelectionnee === "mensuel") {
 function changerImage(source, titre, description, date) {
   document.getElementById('grandeImage').getElementsByTagName('img')[0].setAttribute('src', source);
 
-  document.getElementById('texteImage').innerHTML = "<span>" + titre + "</span><br><br>" + "<p>" + description + "<p><br><small>" + date + "</small>"
+  document.getElementById('texteImage').innerHTML = "<span>" + titre + "</span>" + "<p>" + description + "<p><small>" + date + "</small>"
 
   let miniatures = document.getElementsByClassName('miniature')
   for (let i = 0; i < miniatures.length; i++) {
@@ -63,7 +63,7 @@ function afficherReponse(questions, estCorrect, message) {
   const contenu = 
     '<h3>' + questionTitre + '</h3>' +
     '<div class="' + (estCorrect ? 'correct' : 'incorrect') + '">' +
-    '<img src="Images/Icone/' + (estCorrect ? 'ok.png' : 'croix rouge.png') + '" alt="' + (estCorrect ? 'Vrai' : 'Faux') + '" class="icone">' +
+    '<img src="Images/Icone/' + (estCorrect ? 'check.svg' : 'x-red.svg') + '" alt="' + (estCorrect ? 'Vrai' : 'Faux') + '" class="icone">' +
     message + '</div>'
     
   // Remplacer le contenu 
